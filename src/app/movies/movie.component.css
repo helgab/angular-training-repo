@@ -1,0 +1,40 @@
+.movie {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 5px #ccc;
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+}
+
+.movie__details, 
+.movie__poster {
+    margin: 10px;
+}
+
+.duration_genre {
+    border-bottom: 2px solid #ccc;
+}
+.details__duration:after {
+    content: "|";
+    padding-left: 5px;
+} 
+
+.title {
+    font-size: 24px;
+    color: rgb(54, 53, 53);
+}
+
+button {
+    background-color: green;
+    color: white;
+}
+
+button[disabled] {
+    background-color: #ccc;
+}
+
+.comment__section {
+    margin: 10px 0;
+}

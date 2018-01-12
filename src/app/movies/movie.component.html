@@ -1,0 +1,23 @@
+<div class="movie" [style.borderColor] = "isLiked ? '#4aad8e' : '#ccc'">
+    <div class="movie__poster">
+        <img [src]="poster">
+    </div>
+    <div class="movie__details">
+            <p class="title">{{title}}</p>
+            <p>{{year}}</p>
+            <div class="duration_genre">
+                <span class="details__duration" >{{duration}}</span>
+                <span>{{genre}}</span>
+            </div>
+            <p>{{plot}}</p>
+            <button [class]="isLiked ? 'isSelected' : '' " [style.backgroundColor]="isLiked ? '#4aad8e' : '#0776ed'" (click)="like()">{{isLiked ? 'Liked' : 'Like'}}</button>
+            <div [hidden]="isSaved" class="comment__section">
+                    <textarea [(ngModel)]="comments"></textarea>
+                    <span style="display: block">{{getWordsNumber()}} words</span>
+                    <button (click)="clear()">Clear</button>
+                    <button (click)="saveToggle()" [disabled]="getWordsNumber() == 0">Save</button>
+            </div>
+            
+            <p (click) = "saveToggle()" [hidden] = "!isSaved">{{comments}}</p>
+    </div>   
+</div>
