@@ -11,7 +11,7 @@
             </div>
             <p>{{plot}}</p>
             <button [class]="isLiked ? 'isSelected' : '' " [style.backgroundColor]="isLiked ? '#4aad8e' : '#0776ed'" (click)="like()">{{isLiked ? 'Liked' : 'Like'}}</button>
-            <div [hidden]="isSaved" class="comment__section">
+            <div *ngIf="!isSaved" class="comment__section">
                     <textarea [(ngModel)]="comments"></textarea>
                     <span style="display: block">{{getWordsNumber()}} words</span>
                     <button (click)="clear()">Clear</button>
