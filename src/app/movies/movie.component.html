@@ -1,23 +1,23 @@
-<div class="movie" [style.borderColor] = "isLiked ? '#4aad8e' : '#ccc'">
+<div *ngFor="let movie of movies" class="movie" [style.borderColor] = "movie.isLiked ? '#4aad8e' : '#ccc'">
     <div class="movie__poster">
-        <img [src]="poster">
+        <img [src]="movie.poster">
     </div>
     <div class="movie__details">
-            <p class="title">{{title}}</p>
-            <p>{{year}}</p>
+            <p class="title">{{movie.title}}</p>
+            <p>{{movie.year}}</p>
             <div class="duration_genre">
-                <span class="details__duration" >{{duration}}</span>
-                <span>{{genre}}</span>
+                <span class="details__duration" >{{movie.duration}}</span>
+                <span>{{movie.genre}}</span>
             </div>
-            <p>{{plot}}</p>
-            <button [class]="isLiked ? 'isSelected' : '' " [style.backgroundColor]="isLiked ? '#4aad8e' : '#0776ed'" (click)="like()">{{isLiked ? 'Liked' : 'Like'}}</button>
-            <div *ngIf="!isSaved" class="comment__section">
-                    <textarea [(ngModel)]="comments"></textarea>
-                    <span style="display: block">{{getWordsNumber()}} words</span>
-                    <button (click)="clear()">Clear</button>
-                    <button (click)="saveToggle()" [disabled]="getWordsNumber() == 0">Save</button>
+            <p>{{movie.plot}}</p>
+            <button [class]="movie.isLiked ? 'movie.isSelected' : '' " [style.backgroundColor]="movie.isLiked ? '#4aad8e' : '#0776ed'" (click)="like(movies.indexOf(movie))">{{movie.isLiked ? 'Liked' : 'Like'}}</button>
+            <div *ngIf="!movie.isSaved" class="comment__section">
+                    <textarea [(ngModel)]="movie.comments"></textarea>
+                    <span style="display: block">{{getWordsNumber(movies.indexOf(movie))}} words</span>
+                    <button (click)="clear(movies.indexOf(movie))">Clear</button>
+                    <button (click)="saveToggle(movies.indexOf(movie))" [disabled]="getWordsNumber(movies.indexOf(movie)) == 0">Save</button>
             </div>
             
-            <p (click) = "saveToggle()" [hidden] = "!isSaved">{{comments}}</p>
+            <p (click) = "saveToggle(movies.indexOf(movie))" [hidden] = "!movie.isSaved">{{movie.comments}}</p>
     </div>   
 </div>
