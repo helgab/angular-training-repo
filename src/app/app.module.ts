@@ -6,6 +6,7 @@ import { MoviesModule } from './movies/movies.module'
 
 import { AppComponent } from './app.component';
 import { MovieComponent } from './movies/movie.component';
+import { MovieListComponent } from './movies/movielist.component';
 
 
 @NgModule({
