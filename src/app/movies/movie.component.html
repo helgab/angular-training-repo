@@ -19,5 +19,9 @@
             </div>
             
             <p (click) = "saveToggle(movie)" [hidden] = "!isSaved">{{comments}}</p>
+            <rating-component 
+                [rating]="rating" 
+                (ratingChange)="handleRChange($event)"
+            ></rating-component>
     </div>   
 </div>

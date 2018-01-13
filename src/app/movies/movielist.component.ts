@@ -11,7 +11,8 @@ import { Component} from '@angular/core'
     [poster]="movie.poster"
     [comments]="movie.comments"
     [isLiked]="movie.isLiked"
-    [isSaved]="movie.isSaved">
+    [isSaved]="movie.isSaved"
+    [(rating)]="rating">
     </movie-component>`
 })
 export class MovieListComponent {
@@ -25,7 +26,8 @@ export class MovieListComponent {
           poster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SX300.jpg',
           isLiked: false,
           comments: "enter comment...",
-          isSaved: false
+          isSaved: false,
+          rating: 2
         },
         {
           title: 'Black Swan',
@@ -36,7 +38,8 @@ export class MovieListComponent {
           poster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BNzY2NzI4OTE5MF5BMl5BanBnXkFtZTcwMjMyNDY4Mw@@._V1_SX300.jpg',
           isLiked: false,
           comments: "enter comment...",
-          isSaved: false
+          isSaved: false,
+          rating: 2
         },
         {
           title: 'Fight Club',
@@ -47,7 +50,8 @@ export class MovieListComponent {
           poster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMzFjMWNhYzQtYTIxNC00ZWQ1LThiOTItNWQyZmMxNDYyMjA5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg',
           isLiked: false,
           comments: "enter comment...",
-          isSaved: false
+          isSaved: false,
+          rating: 2
         },
         {
           title: 'The Godfather: Part II',
@@ -58,7 +62,8 @@ export class MovieListComponent {
           poster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMjZiNzIxNTQtNDc5Zi00YWY1LThkMTctMDgzYjY4YjI1YmQyL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg',
           isLiked: false,
           comments: "enter comment...",
-          isSaved: false
+          isSaved: false,
+          rating: 2
         }
       ];
 }

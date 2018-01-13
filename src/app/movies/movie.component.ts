@@ -1,4 +1,5 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output } from "@angular/core";
+import { EventEmitter } from "@angular/core";
 
 @Component({
     selector: 'movie-component',
@@ -16,10 +17,19 @@ export class MovieComponent {
     @Input() comments;
     @Input() isLiked;
     @Input() isSaved;
-    
+    @Input() index;
+    @Output() saveComment = new EventEmitter();
+    @Output() likeMovie = new EventEmitter();
+
+    rating = 4;
+
+
+    handleRChange(rating) {
+        this.rating = rating;
+    }
 
     like(index) {
-        // this.movies[index].isLiked = !this.movies[index].isLiked;
+        this.likeMovie.emit(index)
     }
 
     clear(index) {

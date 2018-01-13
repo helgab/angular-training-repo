@@ -1,0 +1,5 @@
+<i 
+*ngFor="let rating of ratings;let index=index"  
+(click)="handleRatingChange(index)" 
+class="star material-icons" 
+[style.color]="rating ? 'yellow' : 'grey' ">star</i>
